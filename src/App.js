@@ -1,12 +1,14 @@
 import {Provider} from "react-redux";
 import store from "./redux/store";
-import Film from "./components/Film";
+import Main from "./components/Main";
 import {Link, BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import SearchContainer from "./components/SearchContainer";
 
 function App() {
     return (
-        <Router>
-            <Provider store={store}>
+
+        <Provider store={store}>
+            <Router>
                 <div>
                     <nav>
                         <ul>
@@ -22,10 +24,12 @@ function App() {
                 </div>
 
                 <Switch>
-                    <Route exact path="/" component={Film}/>
+                    <Route exact path="/" component={Main}/>
+                    <Route exact path="/search" component={SearchContainer}/>
                 </Switch>
-            </Provider>
-        </Router>
+            </Router>
+        </Provider>
+
     );
 }
 

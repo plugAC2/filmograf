@@ -3,8 +3,7 @@ import {START_FETCHING, DATA_FETCHED, FETCHING_ERROR} from "../actions/apiFetch"
 const initialState = {
     isFetching: false,
     data: {
-        Title: "",
-        Director: "",
+        Search: []
     },
     error: ""
 }
@@ -29,6 +28,6 @@ export default function reducer(state = initialState, {type, payload}) {
                 error: payload
             }
         default:
-            return state;
+            return {...state};
     }
 }
